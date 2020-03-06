@@ -1,2 +1,0 @@
-# UntitledKingdomTask
-Created with CodeSandbox
