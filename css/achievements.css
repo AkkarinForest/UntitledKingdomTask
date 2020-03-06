@@ -1,0 +1,38 @@
+.achievements-wrap {
+  background-color: #1a7071;
+  padding-bottom: 30px;
+}
+
+.achievements-wrap h2 {
+  padding: 10px;
+}
+
+.achievements-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 15%;
+}
+
+.achievement {
+  display: grid;
+  background-color: #aaa6ac;
+  border: thick outset #6f607e;
+  border-radius: 7px;
+  color: #4d4755;
+}
+
+.achievement img {
+  width: 100%;
+}
+
+.achievement p {
+  padding: 8%;
+  margin: 0;
+}
+
+.achievement.achieved {
+  background-color: #f0e8f7;
+  border: thick outset #ae83d8;
+  color: #644884;
+}
