@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./styles.css";
 import { inject, observer } from "mobx-react";
 
 @inject("CounterStore")
@@ -7,7 +6,6 @@ import { inject, observer } from "mobx-react";
 class CookieClicker extends Component {
   render() {
     const { increaseCounter } = this.props.CounterStore;
-    console.warn("changed");
 
     return (
       <div>
