@@ -9,14 +9,12 @@ import Raspberry1 from "../../images/raspberry1.jpg";
 import Raspberry2 from "../../images/raspberry2.jpg";
 import Raspberry3 from "../../images/raspberry3.jpg";
 
-class CounterStore {
+export class CounterStore {
   @observable clickCount = 0;
 
-  @observable clicksTimes = [];
-
-  @observable maxClickBreak = 0;
-
-  @observable maxClickSpeed = 0;
+  increaseCounter = () => {
+    this.clickCount += 1;
+  };
 
   @computed get experienceLevel() {
     if (this.clickCount < 10) return 1;
@@ -48,29 +46,9 @@ class CounterStore {
         icon: Bite1
       },
       {
-        title: "Clicking Junior",
-        achieved: countAchievement2,
-        icon: Bite2
-      },
-      {
-        title: "Clicking Expert",
-        achieved: countAchievement3,
-        icon: Bite3
-      },
-      {
         title: "Clicking Sloth",
         achieved: speedAchievement1,
         icon: Raspberry1
-      },
-      {
-        title: "Clicking Turtle",
-        achieved: speedAchievement2,
-        icon: Raspberry2
-      },
-      {
-        title: "Clicking Cheetah",
-        achieved: speedAchievement3,
-        icon: Raspberry3
       },
       {
         title: "Clicking Nap",
@@ -78,10 +56,32 @@ class CounterStore {
         icon: Party1
       },
       {
+        title: "Clicking Junior",
+        achieved: countAchievement2,
+        icon: Bite2
+      },
+      {
+        title: "Clicking Turtle",
+        achieved: speedAchievement2,
+        icon: Raspberry2
+      },
+      {
         title: "Clicking Hibernation",
         achieved: breakAchievement2,
         icon: Party2
       },
+      {
+        title: "Clicking Expert",
+        achieved: countAchievement3,
+        icon: Bite3
+      },
+
+      {
+        title: "Clicking Cheetah",
+        achieved: speedAchievement3,
+        icon: Raspberry3
+      },
+
       {
         title: "Clicking Coma",
         achieved: breakAchievement3,
@@ -90,9 +90,9 @@ class CounterStore {
     ];
   }
 
-  increaseCounter = () => {
-    this.clickCount += 1;
-  };
+  clicksTimes = [];
+  maxClickBreak = 0;
+  maxClickSpeed = 0;
 
   saveClickTime = () => {
     const clickTime = new Date();
@@ -128,7 +128,7 @@ class CounterStore {
   };
 
   toDiffInSeconds = (time1, time2) => {
-    return Math.round((time2 - time1) / 1000);
+    return Math.round(Math.abs(time2 - time1) / 1000);
   };
 }
 
