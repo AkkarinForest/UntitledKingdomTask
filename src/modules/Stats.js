@@ -5,12 +5,12 @@ import { inject, observer } from "mobx-react";
 @observer
 class Stats extends Component {
   render() {
-    const { clickCount } = this.props.CounterStore;
+    const { clickCount, experienceLevel } = this.props.CounterStore;
 
     return (
       <div>
         <p>You clicked {clickCount} times.</p>
-        <p>Your experience level: {1}.</p>
+        <p>Your experience level is {experienceLevel}.</p>
       </div>
     );
   }

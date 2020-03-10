@@ -1,0 +1,16 @@
+.clicking-wrap {
+  background-color: #061826;
+  color: #4dccbd;
+}
+
+.clicker-macaron {
+  height: 200px;
+}
+
+.clicker-macaron:hover {
+  transform: scale(1.05);
+}
+
+.clicker-macaron:active {
+  transform: scale(0.97);
+}
